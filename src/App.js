@@ -6,19 +6,8 @@ import { Body } from './components/Body';
 import { Footer } from './components/Footer';
 import { id, secret } from './varAmbiente'
 import { CorpoPaginaPostagem } from './components/ComponentsReact/PostagemPage/BodyPostagem';
-import { PaginaPessoa } from './components/PaginaPessoa';
 import { CorpoPaginaAdicionarAnimal } from './components/ComponentsReact/PaginaAnimal/PaginaAdicionarAnimal';
-import { ModalLogin } from './components/ComponentsReact/PaginaLogin/Modal';
-import { Postagens } from './components/ComponentsReact/PostagemPaginaAtualizada/CorpoPágina/Postagens';
 import { PaginaAnimal } from './components/ComponentsReact/PaginaPerfilAnimal/Perfil';
-import { FormCadastro } from './components/ComponentsReact/FormCadastro';
-import { FormLogin } from './components/ComponentsReact/PaginaLogin/Login';
-import { PaginaPerfil } from './components/ComponentsReact/PaginaPerfilPessoa/Perfil';
-import { HomeAnimal } from './components/ComponentsReact/Home/Home';
-import About from './components/pages/about';
-import { TestePerfilUsuario } from './components/TestePerfilUsuario';
-// import {Conteiner} from './components/CaixaComentarios/Conteiner'
-import { CaixaComentarios } from './components/CaixaComentarios';
 import {PaginaNoticias} from './components/PaginaNoticias'
 import { FiltragemHome } from './components/ComponentsReact/Home/Tabela';
 import { CaixaMensagem } from './components/CaixaMesagem';
@@ -26,11 +15,6 @@ import {ChatBot} from './components/ChatBot';
 import {sideBarLateral} from './components/SideBarLateral';
 import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { Login } from './components/LoginRegister/Login';
-import { SignUp } from './components/LoginRegister/Register';
-import { FeedInicio } from './components/FeedInicio';
-import { Perfilnovo } from './components/PerfilNovo';
-import Perfilpessoa from './components/Userprofile/Userprofile';
 import { FormCadastroEstilizado } from './components/ComponentsReact/FormCadastro/index-estilizado';
 import { FormLoginEstilizado } from './components/ComponentsReact/PaginaLogin/Login/index-estilizado';
 import { Chat } from './components/ComponentsReact/WebChat/Chat';
@@ -90,7 +74,7 @@ function App() {
 					<Route path ="/sideBarLateral" component= {sideBarLateral}/>
 					<Route path ="/ChatBot" component={ChatBot}/>
 					<Route path="/caixa-mensagem" component={CaixaMensagem} />
-					<Route path='/teste' component={About}/>
+					<Route path='/teste'/>
 					<Route path='/mapa' component={MapaVisual}/>
 					<Route path='/chat'>
 						<Chat></Chat>
@@ -117,12 +101,7 @@ function App() {
 						<CorpoPaginaAdicionarAnimal/>
 						{/* <Perfilnovo/> */}
 					</Route>
-					<Route path='/editar-perfil'>
-						<TestePerfilUsuario />
-					</Route>
-					<Route path='/annual'>
-						<Postagens />
-					</Route>
+					
 					<Route path='/logoff' component={logoff}>
 					</Route>
 					{/* <Route path="*" component={NotFound} />*/}

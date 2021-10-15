@@ -176,38 +176,38 @@
     
 }
 .radiooptions .desaparecidoinput:checked + label{
-    background-image: url('../../../../assets/fundoopcoes.png');
+    background-image: url('https://i.imgur.com/Az2U6Ib.png');
     background-size: cover;
 }
 
 .radiooptions .naoinput:checked + label{
-    background-image: url('../../../../assets/dog-seating-ativo.png');
+    background-image: url('https://i.imgur.com/8xiXm84.png');
     background-size: cover;
 }
 
 .radiooptions .femeainput:checked + label{
-    background-image: url('../../../../assets/femea-ativo.png');
+    background-image: url('https://i.imgur.com/pBfZaIU.png');
     background-size: cover;
 }
 .radiooptions .machoinput:checked + label{
-    background-image: url('../../../../assets/macho-ativo.png');
+    background-image: url('https://i.imgur.com/8m7v7su.png');
     background-size: cover;
 }
 
 
 
 .radiooptions .siminput:checked + label{
-    background-image: url('../../../../assets/dog-with-belt-walking-with-a-man-ativo.png');
+    background-image: url('https://i.imgur.com/tQVWl7n.png');
     background-size: cover;
 }
 
 .radiooptions .doginput:checked + label{
-    background-image: url('../../../../assets/dog-ativo.png');
+    background-image: url('https://i.imgur.com/0mEM83u.png');
     background-size: cover;
 }
 
 .radiooptions .catinput:checked + label{
-    background-image: url('../../../../assets/cat-ativo.png');
+    background-image: url('https://i.imgur.com/e55iHLA.png');
     background-size: cover;
 }
 .conjunto{
@@ -231,41 +231,41 @@
     }
 }
 .radiooptions .gato label{
-    background-image: url('../../../../assets/cat.png');
+    background-image: url('https://i.imgur.com/16GoOln.png');
     background-size: cover;
 }
 .radiooptions .cachorro label{
-    background-image: url('../../../../assets/dog.png');
+    background-image: url('https://i.imgur.com/cF0FVK0.png');
     background-size: cover;
 }
 .radiooptions .sim label{
-    background-image: url('../../../../assets/dog-with-belt-walking-with-a-man.png');
+    background-image: url('https://i.imgur.com/5VrdzOf.png');
     background-size: cover;
 
 }
 .radiooptions .nao label{
-    background-image: url('../../../../assets/dog-seating.png');
+    background-image: url('https://i.imgur.com/qub3clK.png');
     background-size: cover;
 }
 
 .radiooptions .macho label{
-    background-image: url('../../../../assets/macho.png');
+    background-image: url('https://i.imgur.com/JmnWQCF.png');
     background-size: cover;
 
 }
 .radiooptions .femea label{
-    background-image: url('../../../../assets/femea.png');
+    background-image: url('https://i.imgur.com/pjcn2Vm.png');
     background-size: cover;
 }
 
 .radiooptions .desaparecidoFiltro label{
-    background-image: url('../../../../assets/missing.png');
+    background-image: url('https://i.imgur.com/jGmQwQs.png');
     background-size: cover;
 }
 .form-check{
     padding-left: 3em;
 }
-.stars{
+/* .stars{
     width: 3px;
     display: none;
     height: 3px;
@@ -276,7 +276,7 @@
     height: 40vh;
 
     animation: anim-stars 10s linear infinite;
-  }
+  } */
   #sky{
       height: 60% !important; 
       z-index: 0 !important;

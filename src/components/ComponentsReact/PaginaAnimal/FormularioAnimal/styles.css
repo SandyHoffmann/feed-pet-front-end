@@ -108,63 +108,63 @@
 }
 
 .radiooptionsAnimalForm .cao label{
-    background-image: url('../../../../assets/caoicon.png');
+    background-image: url('https://i.imgur.com/cF0FVK0.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .cao input:checked + label{
-    background-image: url('../../../../assets/caoicon-ativo.png');
+    background-image: url('https://i.imgur.com/0mEM83u.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .gato label{
-    background-image: url('../../../../assets/gatoicon.png');
+    background-image: url('https://i.imgur.com/16GoOln.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .gato input:checked + label{
-    background-image: url('../../../../assets/gatoicon-ativo.png');
+    background-image: url('https://i.imgur.com/e55iHLA.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .sim label{
-    background-image: url('../../../../assets/temdono-icon.png');
+    background-image: url('https://i.imgur.com/5VrdzOf.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .sim input:checked + label{
-    background-image: url('../../../../assets/temdono-icon-ativo.png');
+    background-image: url('https://i.imgur.com/tQVWl7n.png');
     background-size: cover;
 }
 
 
 .radiooptionsAnimalForm .nao label{
-    background-image: url('../../../../assets/naotemdono-icon.png');
+    background-image: url('https://i.imgur.com/qub3clK.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .nao input:checked + label{
-    background-image: url('../../../../assets/naotemdono-icon-ativo.png');
+    background-image: url('https://i.imgur.com/8xiXm84.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .macho label{
-    background-image: url('../../../../assets/masculine.png');
+    background-image: url('https://i.imgur.com/JmnWQCF.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .macho input:checked + label{
-    background-image: url('../../../../assets/masculine-ativo.png');
+    background-image: url('https://i.imgur.com/8m7v7su.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .femea label{
-    background-image: url('../../../../assets/femenine.png');
+    background-image: url('https://i.imgur.com/pjcn2Vm.png');
     background-size: cover;
 }
 
 .radiooptionsAnimalForm .femea input:checked + label{
-    background-image: url('../../../../assets/femenine-ativo.png');
+    background-image: url('https://i.imgur.com/pBfZaIU.png');
     background-size: cover;
 }
 

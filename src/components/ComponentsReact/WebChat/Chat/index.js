@@ -170,8 +170,8 @@ export function Chat(props) {
                         </div>
                 </div>
                 {msg.length<1&&enviar&&
-                        <NotFound titulo="Não há mensagens!" img='https://i.imgur.com/dOkrC9k.gifv'></NotFound>||!enviar&&
-                        <NotFound titulo="Inicie uma conversa!" img='https://i.imgur.com/FWzzjmZ.gifv'></NotFound>
+                        <NotFound titulo="Não há mensagens!" img='https://i.imgur.com/dOkrC9k.gif'></NotFound>||!enviar&&
+                        <NotFound titulo="Inicie uma conversa!" img='https://i.imgur.com/FWzzjmZ.gif'></NotFound>
                         ||<><div className="mensagens__corpo">
                         {atualGrupo?.usuario?.length<=2 &&
                             msg?.map(mensagem => (mensagem.id_usuario === socket.auth.userId) 

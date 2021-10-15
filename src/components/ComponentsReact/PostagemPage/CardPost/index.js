@@ -1,5 +1,4 @@
 import { LikesButtons } from "../Curtida";
-import "../../../PaginaAnimal/styles.css";
 import "./styles.css";
 import { ComentarioPost } from "../Comentario";
 import { Link } from "react-router-dom";
