@@ -1,0 +1,21 @@
+/* .corpoPostagem{
+    border: 1px solid palegreen;
+    background-color: paleturquoise;
+} */
+
+.bodyPost{
+    width: 100%;
+}
+
+.pagPostagem{
+    display: flex;
+    flex-direction: column;
+}
+.divBotao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.botaoPostagem{
+    width: 40%;
+}
