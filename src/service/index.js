@@ -18,7 +18,7 @@ api.interceptors.response.use(function (response) {
     return response;
   }, async function (error) {
       const originalRequest = error.config;
-      const loginUrl = `/auth/login`;
+      const loginUrl = `http://localhost:3000/auth/login`;
       const refreshTokenUrl = "https://feed-pet-back.herokuapp.com/auth/refreshToken";    
       if (error.response?.status === 401 && originalRequest.url !== refreshTokenUrl && error.request.responseURL !== loginUrl) {      
         await authServices.refreshToken();     
