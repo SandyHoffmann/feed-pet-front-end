@@ -19,10 +19,7 @@ export function PaginaPerfilAtualizado(props) {
     async function fetchUserData() {
       try {
         const token = jwt.decode(localStorage.getItem("access-token"), process.env.REACT_APP_REFRESH_TOKEN_SECRET)
-        if (!token){
-          // window.location.replace("/login");
-        }
-        setUsuario(token.sub)
+        setUsuario(token?.sub)
         const res = await api.get(`/usuarios/${id}`);
         let animais = await api.get(`/usuarios/animais/${id || 'undefined'}`);
 
@@ -104,7 +101,7 @@ export function PaginaPerfilAtualizado(props) {
                         >
                           <img src='https://i.imgur.com/YFQQsA5.png'></img>
                         </h6>
-                        <p class="m-0px font-w-600">Tutor de 3 animais</p>
+                        <p class="m-0px font-w-600">Tutor de {animais.length} animais</p>
                       </div>
                     </div>
                     <div>

@@ -1,4 +1,5 @@
 import React from "react";
+import iconLocal from "../../../assets/local.png"
 
 import {
   GoogleMap,
@@ -85,7 +86,7 @@ export function MapaInterativo(props) {
       <GoogleMap
         id="map"
         mapContainerStyle={mapContainerStyle}
-        zoom={8}
+        zoom={10}
         center={center}
         options={options}
         onLoad={onMapLoad}
@@ -100,7 +101,7 @@ export function MapaInterativo(props) {
             }}
 
             icon={{
-              url: 'https://i.imgur.com/7UuTzkO.png',  
+              url: iconLocal,  
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15),
               scaledSize: new window.google.maps.Size(30, 30),

@@ -1,5 +1,6 @@
 import "./styles.css"
 import { FaLinkedinIn , FaInstagram, FaGithub, FaFacebookF } from 'react-icons/fa';
+import Userprofile from "../Userprofile/Userprofile";
 
 
 export function Footer(props) {

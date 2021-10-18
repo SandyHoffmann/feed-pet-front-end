@@ -5,12 +5,14 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    background-image: url('https://i.imgur.com/YWRiiIl.png');
+    background-image: url('../../../../assets/fundofinal2.png');
     background-size: 50%;
     overflow-y: hidden;
 
 }
-
+.loginbotao{
+    width: 100%;
+}
 .caixaElemento{
     padding: 10%;
     background-color: white;
@@ -35,8 +37,35 @@
 .caixaimagem {
     width: 100%;
     margin-left: 10px;
+    background-color: rgba(255,107,222,1);
+    top: 0px;
+    justify-content: space-between;
 }
 
+.loginbox{
+    display: flex;
+    align-items: center;
+    padding: 3%;
+    text-align: center;
+}
+
+.caixaimagem div{
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.caixaimagem div div{
+
+}
+.imglogin{
+    width: 40%;
+}
+.caixaimagem div img{
+    
+    display: flex;
+}
 .bluhrit {
     filter: blur(3px);
     filter: grayscale(80%);
@@ -130,7 +159,7 @@ background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 @media only screen and (max-width: 850px) {
     .grandecaixa{
-        background-image: url("https://i.imgur.com/YWRiiIl.png");
+        background-image: url("../../../../assets/gifgato.gif");
         background-size: cover;
         width: 100%;
     }

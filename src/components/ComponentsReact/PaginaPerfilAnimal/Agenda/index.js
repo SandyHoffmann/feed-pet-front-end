@@ -25,7 +25,8 @@ export function AgendaAnimal(props) {
             const agenda = await api.get(`/agendas/${id}`);
             const token = jwt.decode(localStorage.getItem("access-token"), process.env.REACT_APP_REFRESH_TOKEN_SECRET)
             const usuarioLogado = await api.get(`/usuarios/${token.sub}`);  
-            setUsuario(usuarioLogado.data)      
+            setUsuario(()=>[usuarioLogado.data])
+            console.log(usuario)      
             setAgenda(agenda.data[0])
             setInformacoes(agenda.data[1].reverse())
         } catch (error) {
@@ -42,8 +43,14 @@ export function AgendaAnimal(props) {
     }
     return (
         <>
-            <li><div className="novaAtividade"><FormularioAgenda atividade_feita={agenda.id} setarAtividade={setInformacoesAtiv} atividades={informacoes} /></div></li>
-            {informacoes.map(tarefa =>
+        {usuario.length>0&&
+                <div className="novaAtividade">
+                    <FormularioAgenda atividade_feita={agenda.id} setarAtividade={setInformacoesAtiv} atividades={informacoes} />
+                </div>
+           
+            }
+            {informacoes.map(tarefa => {let tastList = tarefa.atividade_feita.split("/separar/") ; 
+             return(
                 <li key={tarefa.id}>
                 
                     <div className="timeline-time">
@@ -63,9 +70,9 @@ export function AgendaAnimal(props) {
                             <Link to={`/perfil-usuario/${tarefa.usuario.id}`}><span className="username">{tarefa.usuario.nome}</span></Link>
                         </div>
                         <div className="timeline-content">
-                            <p>
-                                {tarefa.atividade_feita}
-                            </p>
+                            <ul>
+                                {tastList.map(task => {return <p>{task}</p>})}
+                            </ul>
                         </div>
                         <div className="timeline-likes">
 
@@ -83,8 +90,8 @@ export function AgendaAnimal(props) {
                         <div className="timeline-footer">
                         </div>
                     </div>
-                </li>)}
-
+                </li>)})}
+            
         </>
 
     )

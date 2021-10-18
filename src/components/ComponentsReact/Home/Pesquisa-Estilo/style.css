@@ -29,7 +29,6 @@
     color: black !important;
 
 }
-
 .select{
     align-self: flex-end;
     flex: auto;
@@ -134,7 +133,7 @@
 }
 
 .radiooptions .form-check{
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-radius: 100%;
     height: 7vh;
     position: relative;
@@ -142,7 +141,7 @@
 }
 
 .radiooptions .form-check{
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-radius: 100%;
     float: left;
     height: 8vh;
@@ -176,38 +175,38 @@
     
 }
 .radiooptions .desaparecidoinput:checked + label{
-    background-image: url('https://i.imgur.com/Az2U6Ib.png');
+    background-image: url(https://i.imgur.com/0xIk2Ew.png);
     background-size: cover;
 }
 
 .radiooptions .naoinput:checked + label{
-    background-image: url('https://i.imgur.com/8xiXm84.png');
+    background-image: url(https://i.imgur.com/p3DOPxB.png);
     background-size: cover;
 }
 
 .radiooptions .femeainput:checked + label{
-    background-image: url('https://i.imgur.com/pBfZaIU.png');
+    background-image: url(https://i.imgur.com/StXg6a3.png);
     background-size: cover;
 }
 .radiooptions .machoinput:checked + label{
-    background-image: url('https://i.imgur.com/8m7v7su.png');
+    background-image: url(https://i.imgur.com/3d3WRcl.png);
     background-size: cover;
 }
 
 
 
 .radiooptions .siminput:checked + label{
-    background-image: url('https://i.imgur.com/tQVWl7n.png');
+    background-image: url(https://i.imgur.com/iU7mJQA.png);
     background-size: cover;
 }
 
 .radiooptions .doginput:checked + label{
-    background-image: url('https://i.imgur.com/0mEM83u.png');
+    background-image: url(https://i.imgur.com/jAT0KxA.png);
     background-size: cover;
 }
 
 .radiooptions .catinput:checked + label{
-    background-image: url('https://i.imgur.com/e55iHLA.png');
+    background-image: url(https://i.imgur.com/JFwTgTv.png);
     background-size: cover;
 }
 .conjunto{
@@ -231,41 +230,41 @@
     }
 }
 .radiooptions .gato label{
-    background-image: url('https://i.imgur.com/16GoOln.png');
+    background-image: url(https://i.imgur.com/tldds0b.png);
     background-size: cover;
 }
 .radiooptions .cachorro label{
-    background-image: url('https://i.imgur.com/cF0FVK0.png');
+    background-image: url(https://i.imgur.com/3bqxcS1.png);
     background-size: cover;
 }
 .radiooptions .sim label{
-    background-image: url('https://i.imgur.com/5VrdzOf.png');
+    background-image: url(https://i.imgur.com/ZTrj4t3.png);
     background-size: cover;
 
 }
 .radiooptions .nao label{
-    background-image: url('https://i.imgur.com/qub3clK.png');
+    background-image: url(https://i.imgur.com/SExCzss.png);
     background-size: cover;
 }
 
 .radiooptions .macho label{
-    background-image: url('https://i.imgur.com/JmnWQCF.png');
+    background-image: url(https://i.imgur.com/q4sjFCU.png);
     background-size: cover;
 
 }
 .radiooptions .femea label{
-    background-image: url('https://i.imgur.com/pjcn2Vm.png');
+    background-image: url(https://i.imgur.com/lhqDTgx.png);
     background-size: cover;
 }
 
 .radiooptions .desaparecidoFiltro label{
-    background-image: url('https://i.imgur.com/jGmQwQs.png');
+    background-image: url(https://i.imgur.com/dWQBmQ9.png);
     background-size: cover;
 }
 .form-check{
     padding-left: 3em;
 }
-/* .stars{
+.stars{
     width: 3px;
     display: none;
     height: 3px;
@@ -276,7 +275,7 @@
     height: 40vh;
 
     animation: anim-stars 10s linear infinite;
-  } */
+  }
   #sky{
       height: 60% !important; 
       z-index: 0 !important;

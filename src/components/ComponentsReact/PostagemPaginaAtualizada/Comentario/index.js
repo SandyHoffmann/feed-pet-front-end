@@ -1,48 +1,37 @@
 import { api } from "../../../../service";
 import React from "react";
+import img from "../../../../assets/olho.jpg";
 import { CardComentario } from "../CardComentario";
-const jwt = require('jsonwebtoken');
+
+import { useState, useEffect } from "react";
 
 
-export class ComentarioPost extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            conteudo: "",
-            comentarios: [],
-            usuario: ""
+export function ComentarioPost(props) {
+    let id_postagem = props.id_postagem
+    const [conteudo,setConteudo] = useState("")
+    const [comentarios,setComentarios] = useState([])
 
-        };
-    }
-
-    async componentDidMount(){
+    useEffect(async () => {        
         try {
             const res = await api.get(`/postagens/${this.props.id_postagem}/comentarios`);
-            const comentario = res.data.reverse();
-            const token = jwt.decode(localStorage.getItem("access-token"), process.env.REACT_APP_REFRESH_TOKEN_SECRET)
-            if (token){
-                const usuarioLogado = await api.get(`/usuarios/${token?.sub}`);        
-                this.setState({usuario:usuarioLogado.data})
-            }
-          
-            this.setState({comentarios:comentario})
+            const comentario = res.data;
+            setComentarios(comentario)
+            console.log(comentario)
 
         } catch (error) {
             console.log(error)
         }
+    },[])
+
+    function addComentario (comentario) {
+        setComentarios([
+            comentario,
+            ...comentarios                
+        ])
+
     }
 
-    addComentario = comentario => {
-        comentario["usuario"]=this.state.usuario
-        this.setState({
-            comentarios: [
-                comentario,
-                ...this.state.comentarios                
-            ]
-        });
-    }
-
-    handleChange = e => {
+    function handleChange (e){
         const value = e.target.value;
         const nome = e.target.name;
         this.setState({
@@ -53,13 +42,16 @@ export class ComentarioPost extends React.Component {
     handleSubmit = async e => {
         try {
             e.preventDefault();
-            const comentario = await api.post(`/postagens/${this.props.id_postagem}/comentarios`,
+            // let token = jwt.decode(localStorage.getItem("token"),secret).sub
+            // console.log(token)
+            const comentario = await api.post(`/postagens/${'ed39d86e-7577-4c2c-8ba7-2a47343eac17'}/${this.props.id_postagem}/comentarios`,
                 {
                     "conteudo": this.state.conteudo
                 }
             )
             // this.props.setarPost(this.state)
             this.setState({conteudo:""})
+            console.log(comentario.data)
             this.addComentario(comentario.data)
 
 
@@ -70,10 +62,10 @@ export class ComentarioPost extends React.Component {
     render() {
         return (
             <>
-            {this.state.usuario&&<><div className="user">
-                    <img src={this.state.usuario.avatar}></img>
+                <div className="user">
+                    <img src={img}></img>
                 </div>
-                
+                <div className="input">
                     <form onSubmit={this.handleSubmit}>
                         <div className="input-group">
                             <input
@@ -83,20 +75,18 @@ export class ComentarioPost extends React.Component {
                                 name="conteudo"
                                 value={this.state.conteudo} onChange={this.handleChange}
                             ></input>
-                            <span className="input-group-btn">
+                            <span className="input-group-btn p-l-10">
                                 <button
-                                    className="btn f-s-12 rounded-corner btn-green"
+                                    className="btn btn-primary f-s-12 rounded-corner"
                                     type="submit"
-                                    id="botao-comentario"
                                 >
                                     Comente!
                                 </button>
                             </span>
                         </div>
-                    </form></>||<p>Faça login para interagir com os posts!</p>}
-                    <div>
-                      {this.state.comentarios.map(coment => <CardComentario key={coment.id} comentario={coment} criado = {coment.createdAt} conteudo={coment.conteudo} usuario={coment.usuario}></CardComentario>)}
+                    </form>
                 </div>
+                {this.state.comentarios.map(coment => <CardComentario key={coment.id} conteudo={coment.conteudo} ></CardComentario>)}
             </>
 
         )

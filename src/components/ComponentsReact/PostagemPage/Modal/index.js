@@ -1,6 +1,9 @@
 import { Modal,Button } from 'react-bootstrap';
 import { useState } from "react";
 import { FormPostagem } from "../PostagemForm";
+import Sky from 'react-sky';
+
+import "./styles.css"
 
 export function ModalPostagem(props) {
     const [show, setShow] = useState(false);
@@ -10,13 +13,17 @@ export function ModalPostagem(props) {
   
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        
+        <div className="divformPost">
+        <button className="btn botaopost" onClick={handleShow}>
           Cadastrar Postagem
-        </Button>
-  
+        </button>
+        
+        </div>
+
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Formulario</Modal.Title>
+            <Modal.Title>Cadastrar Postagem</Modal.Title>
           </Modal.Header>
           <Modal.Body><FormPostagem setarPost={props.setarPost} fecharForm={handleClose}/></Modal.Body>
         </Modal>

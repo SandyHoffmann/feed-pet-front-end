@@ -62,7 +62,7 @@
   border: none;
   border-radius: 0;
   border-bottom: 3px solid pink;
-  border-image: linear-gradient(42deg, rgba(255,72,128,1) 19%, rgba(104,6,130,1) 100%);
+  border-image:  radial-gradient(circle, rgba(255,72,128,1) 42%, rgba(104,6,130,1) 100%);
   border-image-slice: 1;
   width: 100%;
 
@@ -133,7 +133,7 @@ textarea:focus-visible{
   background: #a924c4 no-repeat center center;
 }
 .animalerta input:checked + label{
-  background-image: url('https://i.imgur.com/e55iHLA.png');
+  background-image: url('../../../../assets/cat-ativo.png');
   background-size: 5vh;
 }
 .botaoalertagerar{
@@ -141,7 +141,7 @@ textarea:focus-visible{
 
 }
 .animalerta input + label{
-  background-image: url('https://i.imgur.com/16GoOln.png');
+  background-image: url('../../../../assets/cat.png');
   background-size: 5vh;
 }
 
