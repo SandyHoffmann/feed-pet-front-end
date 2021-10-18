@@ -11,6 +11,9 @@ api.interceptors.request.use(config => {
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
+    if(config.url === '/animais'){
+      return config
+    }
     return config;
 });
 
