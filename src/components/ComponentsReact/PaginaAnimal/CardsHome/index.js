@@ -2,7 +2,6 @@ import React from "react";
 import { CardTesteReact } from "../Card";
 import { FormAnimal } from "../FormularioAnimal";
 import "./styles.css";
-import gif from "../../../../assets/dog.gif"
 
 export function Cardhometeste(props) {
     

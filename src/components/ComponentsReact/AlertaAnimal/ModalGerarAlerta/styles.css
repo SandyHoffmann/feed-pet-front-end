@@ -133,16 +133,16 @@ textarea:focus-visible{
   background: #a924c4 no-repeat center center;
 }
 .animalerta input:checked + label{
-  background-image: url('../../../../assets/cat-ativo.png');
-  background-size: 5vh;
+  background-image: url('https://i.imgur.com/e55iHLA.png');
+  background-size: cover;
 }
 .botaoalertagerar{
   background-color:#ff4880 !important;
 
 }
 .animalerta input + label{
-  background-image: url('../../../../assets/cat.png');
-  background-size: 5vh;
+  background-image: url('https://i.imgur.com/e55iHLA.png');
+  background-size: cover;
 }
 
 @media only screen and (max-width: 850px) {

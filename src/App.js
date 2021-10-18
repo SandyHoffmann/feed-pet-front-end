@@ -109,6 +109,8 @@ function App() {
 						<FormLoginEstilizado />
 					</Route>
 					</Switch>
+					<ChatBot/>
+
 				<Footer />
 			</Router>
 		</Body>

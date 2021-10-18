@@ -1,5 +1,4 @@
 import React from "react";
-import iconLocal from "../../../assets/local.png"
 
 import {
   GoogleMap,
@@ -35,7 +34,7 @@ export function MapaInterativo(props) {
 
   React.useEffect(async () => {
       try {
-        const res = await fetch("http://localhost:3000/alertas", {
+        const res = await fetch("https://feed-pet-back.herokuapp.com/alertas", {
             method: "GET"
         });
 
@@ -80,7 +79,14 @@ export function MapaInterativo(props) {
   // Função de enviar formulário
   // const { lat, lng } selected.getPosition();
   // `${lat} ${lng}`  
-
+  function catOrDog(tipo_animal){
+    if (tipo_animal==="Cachorro") {
+      return 'https://i.imgur.com/cF0FVK0.png'
+    }
+    else {
+      return 'https://i.imgur.com/16GoOln.png'
+    }
+}
   return (
     <div>
       <GoogleMap
@@ -101,7 +107,7 @@ export function MapaInterativo(props) {
             }}
 
             icon={{
-              url: iconLocal,  
+              url: 'https://i.imgur.com/cF0FVK0.png',  
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15),
               scaledSize: new window.google.maps.Size(30, 30),
