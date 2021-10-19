@@ -56,16 +56,6 @@ export class FormLoginEstilizado extends React.Component {
         };
     }
 
-    async componentDidMount() {
-        let menu = document.querySelectorAll(".navbar")
-        let footer = document.querySelectorAll('.footer')
-        let body = document.querySelectorAll('.body')
-
-        menu[0].className += " menuLogin"
-        // footer[0].className += " footerLogin"
-        body[0].className += " homeLogin"
-    }
-
     handleChange = e => {
         const value = e.target.value;
         const nome = e.target.name;
