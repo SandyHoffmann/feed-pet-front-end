@@ -36,7 +36,7 @@ export function MapaVisual(props) {
 
   React.useEffect(async () => {
       try {
-        const res = await fetch("http://localhost:3000/alertas", {
+        const res = await fetch("https://feed-pet-back.herokuapp.com/alertas", {
             method: "GET"
         });
 
@@ -57,11 +57,9 @@ export function MapaVisual(props) {
                 time: alerta.dataDesaparecimento,
                 tipo: tipo_animal
               };
-              console.log(tipo_animal)
               lista.push(marker)
             }
             setMarkers(lista)
-            console.log(alertas)
         }
     } catch (error) {
         console.log(error);
@@ -72,7 +70,6 @@ export function MapaVisual(props) {
 
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
-    console.log(markers)
     mapRef.current = map;
   }, []);
 

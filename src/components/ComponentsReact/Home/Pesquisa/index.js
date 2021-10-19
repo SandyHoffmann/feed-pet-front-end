@@ -1,8 +1,5 @@
 import React from "react";
 import "./style.css"
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-
 
 export function Pesquisa(props) {
 
@@ -82,31 +79,3 @@ export function Pesquisa(props) {
         </div>
     );
 }
-
-{/* <div style={{
-    marginLeft: '700px',
-    marginRight: '250px',
-    marginTop: '40px'
-}}>
-    <h3></h3>
-    <Autocomplete
-        style={{
-            width: 700,
-            backgroundColor: 'white',
-            paddingTop: '3px'
-        }}
-        value={props.texto}
-        freeSolo
-        autoComplete
-        autoHighlight
-        options={props.options}
-        renderInput={(params) => (
-            <TextField {...params}
-                label="Search Box"
-                className="Pesquisa"
-                onChange={props.onChange}
-                name="filterText"
-            />
-        )}
-    />
-</div> */}

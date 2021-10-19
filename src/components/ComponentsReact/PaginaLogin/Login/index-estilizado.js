@@ -19,7 +19,6 @@ const initialState = {
 }
 
 const responseGoogle = async (response) => {
-    console.log(response);
     const googleToken = response.tokenId;
     
     try {
@@ -67,8 +66,6 @@ export class FormLoginEstilizado extends React.Component {
     handleSubmit = async e => {
         try {
             e.preventDefault();
-            // let token = jwt.decode(localStorage.getItem("token"),secret).sub
-            // console.log(token)
             await authServices.signIn(this.state.email,this.state.senha)
             this.setState({...initialState})
             window.location.replace("/");    

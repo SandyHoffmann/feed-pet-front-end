@@ -97,7 +97,7 @@ export function ModalAlertaMenu(props) {
                   </li>
                 </ul>
               </nav>
-         {!token&&<div className="lembrete"><p>Faça login para poder cadastrar um animal perdido!</p></div>}
+         {!token&&<div className="lembrete"><p>Faça login para cadastrar um animal perdido!</p></div>}
         </Modal.Body>
       </Modal>
     </>

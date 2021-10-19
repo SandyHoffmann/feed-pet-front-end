@@ -21,14 +21,12 @@ export function FormCadastroEstilizado(){
         } else if (nome=="avatar"){
             setImagem(e.target.files[0])
         }
-        console.log(imagem)
     }
     
     async function handleSubmit(e){
         try {
             e.preventDefault();
             const formData = new FormData(e.target);
-            console.log(formData)
             let p = document.querySelectorAll(".carregando")
             p[0].className = "carregando loader"
             const res = await api.post(`/usuarios/`, 
@@ -38,7 +36,6 @@ export function FormCadastroEstilizado(){
                                         }
                                 });
             p[0].className = "carregando"
-            console.log(res.data)
             setNome("")
             setEmail("")
             setSenha("")   

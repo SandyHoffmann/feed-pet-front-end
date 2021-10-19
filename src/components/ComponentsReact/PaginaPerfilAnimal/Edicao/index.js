@@ -4,7 +4,6 @@ import { api } from "../../../../service";
 import "./styles.css"
 export function EdicaoAnimal(props) {
   const { id } = useParams();
-  console.log(id)
 
   const [nome, setNome] = useState("")
   const [raca, setRaca] = useState("")
@@ -23,7 +22,6 @@ export function EdicaoAnimal(props) {
     try {
       e.preventDefault();
       const formData = new FormData(e.target);
-      console.log(formData)
       let p = document.querySelectorAll(".carregando")
       p[0].className = "carregando loader"
       const res = await api.put(`/animais/${id}`,
@@ -38,24 +36,10 @@ export function EdicaoAnimal(props) {
       div[0].className = "row about-list animalEditar invisivel"
       let divInvisivel = document.querySelectorAll("#lista")
       divInvisivel[0].className = "row about-list"
-      // const animal = await api.post(`/usuarios/animais/${token.sub}`,
-      //     formData, {
-      //     headers: {
-      //         "Content-Type": `multipart/form-data;boundary=${formData._boundary}`,
-      //     }
-      // });
     } catch (error) {
 
     }
   }
-  // async function handleChange(e) {
-  //     const value = e.target.value;
-  //     const nome = e.target.name;
-  //     setInformacoes({
-  //         [nome]: value
-  //     });
-  //     // console.log(value)
-  // }
   return (
     <>
       <form onSubmit={handleSubmit} className="row about-list formEdicao">

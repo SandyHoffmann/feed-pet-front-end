@@ -4,9 +4,7 @@ import {
   GoogleMap,
   useLoadScript,
   Marker,
-  InfoWindow,
 } from "@react-google-maps/api";
-import { formatRelative } from "date-fns";
 
 import "@reach/combobox/styles.css";
 
@@ -31,29 +29,7 @@ export function MapaInterativo(props) {
   });
   const [marker, setMarker] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
-
-  React.useEffect(async () => {
-      try {
-        const res = await fetch("https://feed-pet-back.herokuapp.com/alertas", {
-            method: "GET"
-        });
-
-        if (res.ok) {
-            const alertas = await res.json();
-            for (let alerta of alertas) {
-              const { local } = alerta
-              const { lat, lgn } = local.split("");
-              console.log(`${lat} ${lgn}`);
-            }
-            console.log(alertas)
-        }
-    } catch (error) {
-        console.log(error);
-    }
-      
-      // Atribuir ao vetor de markers a localização
-    }, []);
-
+  
     React.useEffect(async () => {
       props.funcao(marker);
     }, [marker]);
@@ -76,17 +52,6 @@ export function MapaInterativo(props) {
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
 
-  // Função de enviar formulário
-  // const { lat, lng } selected.getPosition();
-  // `${lat} ${lng}`  
-  function catOrDog(tipo_animal){
-    if (tipo_animal==="Cachorro") {
-      return 'https://i.imgur.com/cF0FVK0.png'
-    }
-    else {
-      return 'https://i.imgur.com/16GoOln.png'
-    }
-}
   return (
     <div>
       <GoogleMap

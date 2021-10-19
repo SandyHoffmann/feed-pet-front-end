@@ -8,7 +8,6 @@ export function HomeAnimal(props) {
     const [card, setCard] = useState([])
     const [valor,setValor] = useState("")
     
-    console.log(props.valor)
     
 
     

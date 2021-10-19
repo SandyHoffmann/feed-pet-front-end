@@ -88,7 +88,6 @@ export class FormAnimal extends React.Component {
 
     render() {
         const card = this.state.card;
-        console.log(card)
 
         return (
             <>

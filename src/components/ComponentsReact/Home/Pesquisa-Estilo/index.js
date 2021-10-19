@@ -1,8 +1,5 @@
 import React from "react";
 import "./style.css"
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import Sky from 'react-sky';
 
 export function PesquisaEstilo(props) {
 
@@ -10,18 +7,6 @@ export function PesquisaEstilo(props) {
         <>
         <div className="rosaBg"></div>
         <div className="barra-pesquisa">
-       {/* <Sky
-          images={{
-
-            0: 'https://i.imgur.com/hLs9qfg.png',
-            1:'https://i.imgur.com/qLMG2lP.png',
-            2:'https://i.imgur.com/tc5FFP3.png'
-            }} */}
-            {/* how={200} 
-            time={40} 
-            size={'50px'} 
-            background={'#ff4880'} 
-        />           */}
 
            
             <div className="caixaPesquisa">
@@ -152,31 +137,3 @@ export function PesquisaEstilo(props) {
         </>
     );
 }
-
-{/* <div style={{
-    marginLeft: '700px',
-    marginRight: '250px',
-    marginTop: '40px'
-}}>
-    <h3></h3>
-    <Autocomplete
-        style={{
-            width: 700,
-            backgroundColor: 'white',
-            paddingTop: '3px'
-        }}
-        value={props.texto}
-        freeSolo
-        autoComplete
-        autoHighlight
-        options={props.options}
-        renderInput={(params) => (
-            <TextField {...params}
-                label="Search Box"
-                className="Pesquisa"
-                onChange={props.onChange}
-                name="filterText"
-            />
-        )}
-    />
-</div> */}
