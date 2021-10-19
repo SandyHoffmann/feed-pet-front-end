@@ -40,7 +40,7 @@ const responseGoogle = async (response) => {
             
             window.location.replace("/")
         } else {
-            alert("Aconteceu algum erro ao fazer o login");
+            alert(res.status);
         }
     } catch (error) {
         console.log(error);
@@ -62,7 +62,7 @@ export class FormLoginEstilizado extends React.Component {
         let body = document.querySelectorAll('.body')
 
         menu[0].className += " menuLogin"
-        footer[0].className += " footerLogin"
+        // footer[0].className += " footerLogin"
         body[0].className += " homeLogin"
     }
 
@@ -95,20 +95,20 @@ export class FormLoginEstilizado extends React.Component {
             <>
             {/* colocar validações */}
         <div className="grandecaixa">
-            <div className="caixaimagem"><img src='https://i.imgur.com/Gfs47Nr.gif' className="bluhrit"></img></div>
+            <div className="caixaimagem"><img src='https://imgur.com/gC4karb.gif' className="bluhrit"></img></div>
             <div className="container caixa">
                 <form onSubmit={this.handleSubmit} className="caixaElemento">
-                <h1>Login</h1>
+                {/* <h1>Login</h1> */}
                 <div className="form-group form-err">
                     <br/>
-                    <label htmlFor="email">Email:</label>
-                    <input type="text" id="email" name="email" aria-describedby="Email" value={this.state.email} onChange={this.handleChange} placeholder="Email"/>
+                    <label htmlFor="email">E-mail:</label>
+                    <input type="text" id="email" name="email" aria-describedby="Email" value={this.state.email} onChange={this.handleChange} placeholder="digite seu e-mail"/>
                 </div>
                 <br/>
 
                 <div className="form-group form-err login-err">
-                    <label htmlFor="senha">Nome:</label>
-                    <input type="text" id="senha" name="senha" aria-describedby="Senha" value={this.state.senha} onChange={this.handleChange} placeholder="Senha"/>
+                    <label htmlFor="senha">Senha:</label>
+                    <input type="text" id="senha" name="senha" aria-describedby="Senha" value={this.state.senha} onChange={this.handleChange} placeholder="digite sua senha"/>
                 </div>
                 <br/>
                 <div className="linksForm">

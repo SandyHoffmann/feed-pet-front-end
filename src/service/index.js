@@ -3,7 +3,7 @@ import authServices from "./authServices";
 
 export const api = axios.create({
     baseURL:"https://feed-pet-back.herokuapp.com/",
-    timeout:2000
+    timeout:5000
 })
 
 api.interceptors.request.use(config => {
