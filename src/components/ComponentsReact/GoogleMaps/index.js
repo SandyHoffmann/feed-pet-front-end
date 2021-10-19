@@ -72,7 +72,7 @@ export function MapaInterativo(props) {
             }}
 
             icon={{
-              url: 'https://i.imgur.com/cF0FVK0.png',  
+              url: 'https://imgur.com/7UuTzkO',  
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15),
               scaledSize: new window.google.maps.Size(30, 30),
