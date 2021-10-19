@@ -23,7 +23,7 @@ const responseGoogle = async (response) => {
     const googleToken = response.tokenId;
     
     try {
-        const res = await fetch("http://localhost:3000/auth/login-google", {
+        const res = await fetch("https://feed-pet-front.herokuapp.com/auth/login-google", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
