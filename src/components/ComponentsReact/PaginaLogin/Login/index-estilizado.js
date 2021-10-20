@@ -23,7 +23,7 @@ const responseGoogle = async (response) => {
     const googleToken = response.tokenId;
     
     try {
-        const res = await fetch("http://localhost:3000/auth/login-google", {
+        const res = await fetch("https://feed-pet-back.herokuapp.com/auth/login-google", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -108,7 +108,7 @@ export class FormLoginEstilizado extends React.Component {
 
                 <div className="form-group form-err login-err">
                     <label htmlFor="senha">Senha:</label>
-                    <input type="text" id="senha" name="senha" aria-describedby="Senha" value={this.state.senha} onChange={this.handleChange} placeholder="digite sua senha"/>
+                    <input type="password" id="senha" name="senha" aria-describedby="Senha" value={this.state.senha} onChange={this.handleChange} placeholder="digite sua senha"/>
                 </div>
                 <br/>
                 <div className="linksForm">

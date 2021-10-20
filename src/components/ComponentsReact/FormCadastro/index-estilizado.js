@@ -75,7 +75,7 @@ export function FormCadastroEstilizado(){
                 <br/>
                 <div className="form-group senha-err form-err">
                     <label htmlFor="senha">Senha:</label>
-                    <input type="text" className="form-cadastro" id="senha" name="senha" aria-describedby="Senha" value={senha} onChange={handleChange} placeholder="Senha" />
+                    <input type="password" className="form-cadastro" id="senha" name="senha" aria-describedby="Senha" value={senha} onChange={handleChange} placeholder="Senha" />
                 </div>
                 <input type="file" name="avatar" className="form-cadastro img inputfile" onChange={handleChange} />
                 <span className="avatar-err form-err cadastro-err"></span>
