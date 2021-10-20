@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Menu } from './components/Menu';
 import { Body } from './components/Body';
 import { Footer } from './components/Footer';
-import { id, secret } from './varAmbiente'
 import { CorpoPaginaPostagem } from './components/ComponentsReact/PostagemPage/BodyPostagem';
 import { CorpoPaginaAdicionarAnimal } from './components/ComponentsReact/PaginaAnimal/PaginaAdicionarAnimal';
 import { PaginaAnimal } from './components/ComponentsReact/PaginaPerfilAnimal/Perfil';
@@ -20,44 +19,6 @@ import { FormLoginEstilizado } from './components/ComponentsReact/PaginaLogin/Lo
 import { Chat } from './components/ComponentsReact/WebChat/Chat';
 import { MapaVisual } from './components/ComponentsReact/MapaVisual';
 import { PaginaPerfilAtualizado } from './components/ComponentsReact/PerfilNovoUsuario';
-
-
-
-
-// export function Logbox() {
-//   return (<Router>
-//     <div className="App">
-//       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-//         <div className="container">
-//           <Link className="navbar-brand" to={"/sign-in"}>positronX.io</Link>
-//           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-//             <ul className="navbar-nav ml-auto">
-//               <li className="nav-item">
-//                 <Link className="nav-link" to={"/sign-in"}>Login</Link>
-//               </li>
-//               <li className="nav-item">
-//                 <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-//       </nav>
-
-//       <div className="auth-wrapper">
-//         <div className="auth-inner">
-//           <Switch>
-//             <Route exact path='/' component={Login} />
-//             <Route path="/sign-in" component={Login} />
-//             <Route path="/sign-up" component={SignUp} />
-//           </Switch>
-//         </div>
-//       </div>
-//     </div></Router>
-//   );
-// }
-
-const jwt = require('jsonwebtoken');
-const token = jwt.sign({ sub: id }, secret);
 
 function logoff() {
 	localStorage.clear()

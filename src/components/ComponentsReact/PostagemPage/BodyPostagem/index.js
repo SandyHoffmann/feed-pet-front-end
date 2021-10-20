@@ -24,7 +24,6 @@ export class CorpoPaginaPostagem extends React.Component {
             const token = jwt.decode(localStorage.getItem("access-token"), process.env.REACT_APP_REFRESH_TOKEN_SECRET)
             if (token){
                 const usuarioLogado = (await api.get(`/usuarios/${token?.sub}`)).data;
-                console.log(usuarioLogado)
                 this.setState(() => ({ usuario: usuarioLogado }))
 
             }

@@ -42,10 +42,6 @@ export class FormPostagem extends React.Component {
                 }
             )
 
-            if (!post.ok){
-                console.log(post.body)
-            }
-
             this.props.setarPost(post.data)
             this.setState({titulo:"",conteudo:""})
             this.props.fecharForm()

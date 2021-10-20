@@ -19,7 +19,6 @@ export function LikesButtons(props) {
             const token = jwt.decode(localStorage.getItem("access-token"), process.env.REACT_APP_REFRESH_TOKEN_SECRET)?.sub
             setTotalLikes(curtidas);
             const curtidasVerificacao = res.data
-            console.log(usuarioLogado)
             const achar = curtidasVerificacao.map(curtida => {if (curtida.user_id == token){ setLikeAtivo(()=>'ativado')}})
         } catch (error) {
             console.log(error)

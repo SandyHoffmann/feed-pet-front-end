@@ -15,7 +15,6 @@ export function VerificarErros(erros){
         console.log(err.param)
         let elementoAdc = document.querySelector('.'+err.param+'-err')
         if (elementoAdc){
-            console.log("encontrou")
             let p = document.createElement("p")
             p.innerHTML = err.msg
             p.className = 'err'
