@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./styles.css";
 import { api } from "../../../../service";
 import { Carousel } from "react-bootstrap";
+import { SliderAnimal } from "../SliderAnimal";
 import DateTimePicker from 'react-datetime-picker';
 import { FormAnimal } from "../../PaginaAnimal/FormularioAnimal";
 import { MapaInterativo } from "../../GoogleMaps";
@@ -28,6 +29,7 @@ export function ModalGerarAlertaMenu(props) {
       const token = jwt.decode(localStorage.getItem("access-token"), process.env.REACT_APP_REFRESH_TOKEN_SECRET)
       const res = await api.get(`/usuarios/animais/${token.sub || 'undefined'}`);
       const animais = res.data.filter(animal => animal.status !== "Desaparecido");
+      console.log(animais)
       setAnimais(animais)
 
     } catch (error) {
@@ -43,6 +45,7 @@ export function ModalGerarAlertaMenu(props) {
           const res = await api.post(`/alertas/${id_animal}`, 
                               {descricao,dataDesaparecimento:data_desaparecimento,local,cidade}
                               );
+          console.log(res.data)
           setIdAnimal("")
           setDescricao("")
           setDataDesaparecimento(new Date())
@@ -56,6 +59,7 @@ export function ModalGerarAlertaMenu(props) {
     } catch (error) {
         let erros = error.response.data
         console.log(erros)
+        // VerificarErros(erros)
     }
     
     }
@@ -92,7 +96,7 @@ export function ModalGerarAlertaMenu(props) {
   return (
     <>
       <Button
-        className="btn botaoalertagerar"
+        id="botaoalertagerar"
         onClick={handleShow}
       >
         {" "}

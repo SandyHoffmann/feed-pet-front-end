@@ -19,10 +19,11 @@ const initialState = {
 }
 
 const responseGoogle = async (response) => {
+    console.log(response);
     const googleToken = response.tokenId;
     
     try {
-        const res = await fetch("https://feed-pet-back.herokuapp.com/auth/login-google", {
+        const res = await fetch("http://localhost:3000/auth/login-google", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -55,6 +56,16 @@ export class FormLoginEstilizado extends React.Component {
         };
     }
 
+    async componentDidMount() {
+        let menu = document.querySelectorAll(".navbar")
+        let footer = document.querySelectorAll('.footer')
+        let body = document.querySelectorAll('.body')
+
+        menu[0].className += " menuLogin"
+        // footer[0].className += " footerLogin"
+        body[0].className += " homeLogin"
+    }
+
     handleChange = e => {
         const value = e.target.value;
         const nome = e.target.name;
@@ -66,6 +77,8 @@ export class FormLoginEstilizado extends React.Component {
     handleSubmit = async e => {
         try {
             e.preventDefault();
+            // let token = jwt.decode(localStorage.getItem("token"),secret).sub
+            // console.log(token)
             await authServices.signIn(this.state.email,this.state.senha)
             this.setState({...initialState})
             window.location.replace("/");    
@@ -82,7 +95,7 @@ export class FormLoginEstilizado extends React.Component {
             <>
             {/* colocar validações */}
         <div className="grandecaixa">
-            <div className="caixaimagem"><img src='https://imgur.com/gC4karb.gif' className="bluhrit"></img></div>
+            <div className="caixaimagem"><img src='http://i.imgur.com/TsDHJPgh.gif' className="bluhrit"></img></div>
             <div className="container caixa">
                 <form onSubmit={this.handleSubmit} className="caixaElemento">
                 {/* <h1>Login</h1> */}
@@ -95,7 +108,7 @@ export class FormLoginEstilizado extends React.Component {
 
                 <div className="form-group form-err login-err">
                     <label htmlFor="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" aria-describedby="Senha" value={this.state.senha} onChange={this.handleChange} placeholder="digite sua senha"/>
+                    <input type="text" id="senha" name="senha" aria-describedby="Senha" value={this.state.senha} onChange={this.handleChange} placeholder="digite sua senha"/>
                 </div>
                 <br/>
                 <div className="linksForm">

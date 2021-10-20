@@ -21,12 +21,14 @@ export function FormCadastroEstilizado(){
         } else if (nome=="avatar"){
             setImagem(e.target.files[0])
         }
+        console.log(imagem)
     }
     
     async function handleSubmit(e){
         try {
             e.preventDefault();
             const formData = new FormData(e.target);
+            console.log(formData)
             let p = document.querySelectorAll(".carregando")
             p[0].className = "carregando loader"
             const res = await api.post(`/usuarios/`, 
@@ -36,6 +38,7 @@ export function FormCadastroEstilizado(){
                                         }
                                 });
             p[0].className = "carregando"
+            console.log(res.data)
             setNome("")
             setEmail("")
             setSenha("")   
@@ -47,7 +50,7 @@ export function FormCadastroEstilizado(){
             if (typeof erros === 'object'){
                 VerificarErros(erros)
             } else{
-                VerificarErros({errors:[{param:'cadastro',msg:'Já existe um usuario com esse e-mail!'}]})
+                VerificarErros({errors:[{param:'cadastro',msg:'Já existe um usuário com esse e-mail!'}]})
             }
         }
     }
@@ -55,7 +58,7 @@ export function FormCadastroEstilizado(){
         return (
             <>
             <div className="grandecaixa">
-            <div className="caixaimagem"><img src='https://imgur.com/gC4karb.gif' className="bluhrit"></img></div>
+            <div className="caixaimagem"><img src='http://i.imgur.com/hPpW64Wh.gif' className="bluhrit"></img></div>
             <div className="container caixa">
                 <form onSubmit={handleSubmit} className="caixaElemento  cadastroCaixa" enctype="multipart/form-data"> 
                 <h1>Cadastre-se</h1>
@@ -72,7 +75,7 @@ export function FormCadastroEstilizado(){
                 <br/>
                 <div className="form-group senha-err form-err">
                     <label htmlFor="senha">Senha:</label>
-                    <input type="password" className="form-cadastro" id="senha" name="senha" aria-describedby="Senha" value={senha} onChange={handleChange} placeholder="Senha" />
+                    <input type="text" className="form-cadastro" id="senha" name="senha" aria-describedby="Senha" value={senha} onChange={handleChange} placeholder="Senha" />
                 </div>
                 <input type="file" name="avatar" className="form-cadastro img inputfile" onChange={handleChange} />
                 <span className="avatar-err form-err cadastro-err"></span>

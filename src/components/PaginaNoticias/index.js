@@ -60,7 +60,7 @@ export function PaginaNoticias() {
 
 
     return (
-        <div>
+        <div className="pagNoticia">
 
             <div className="cabecalho">
                 <NoticiasCabecalho

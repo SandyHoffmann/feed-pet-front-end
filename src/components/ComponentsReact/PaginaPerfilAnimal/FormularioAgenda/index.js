@@ -13,7 +13,10 @@ export function FormularioAgenda(props) {
     const [atividadeFeita, setAtividadeFeita] = useState("")
 
     async function handleChange(e) {
+        // const value = e.target.value;
+        // const nome = e.target.name;
         setAtividadeFeita(e);
+        // console.log(value)
     }
     
     async function handleSubmit(e) {

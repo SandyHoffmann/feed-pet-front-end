@@ -1,10 +1,11 @@
 import "./styles.css";
-import { DropdownButton, Dropdown } from "react-bootstrap";
+import { DropdownButton, Dropdown, Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { ModalGerarAlertaMenu } from "../ComponentsReact/AlertaAnimal/ModalGerarAlerta";
 import { ModalAlertaMenu } from "../ComponentsReact/AlertaAnimal/ModalAlerta";
 import { ModalChat } from "../ComponentsReact/Notificacoes/ChatNotificacoes";
 import { useEffect, useState } from "react";
+import { MapaInterativo } from "../ComponentsReact/GoogleMaps";
 const jwt = require('jsonwebtoken');
 
 
@@ -14,7 +15,8 @@ export function Menu(props) {
   const [pagAtual, setpagAtual] = useState('')
   useEffect(async () => {
     let local = window.location.href
-    let pag = local.split('https://feed-pet-back.herokuapp.com/');
+    let pag = local.split('http://localhost:3001/');
+    console.log(pag)
     setpagAtual(pag[1])
   }, [])
   return (
@@ -63,8 +65,8 @@ export function Menu(props) {
                 title={<img src='https://i.imgur.com/Pm6cTZh.png' className="lupa" ></img>}
                 variant="flat"
               >
-                <Dropdown.Item><li><NavLink to={`/perfil-usuario/${token?.sub}`} activeClassName="selected" className="link-drop" onClick={e => setpagAtual('perfil-usuario')}>Perfil-Usuario</NavLink></li></Dropdown.Item>
-                <Dropdown.Item><li><NavLink to="/animais" activeClassName="selected" className="link-drop" onClick={e => setpagAtual('animais')}>Meus Animais</NavLink></li></Dropdown.Item>
+                <Dropdown.Item><li><NavLink to={`/perfil-usuario/${token?.sub}`} activeClassName="selected" className="link-drop" onClick={e => setpagAtual('perfil-usuario')}>Perfil do usuário</NavLink></li></Dropdown.Item>
+                <Dropdown.Item><li><NavLink to="/animais" activeClassName="selected" className="link-drop" onClick={e => setpagAtual('animais')}>Meus animais</NavLink></li></Dropdown.Item>
                 <Dropdown.Item>
                   <NavLink to="/logoff" activeClassName="selected" className="link-drop">
                     Log Out

@@ -38,11 +38,14 @@ export function FiltragemHome(props) {
             lista_filtros = Object.values(filtros)
             verificar = true
             for (let e of lista_filtros) {
+                console.log(e)
                 if (!lista.includes(e) && e != "") {
+                    console.log(lista)
                     verificar = false
                 }
             }
             if (i.nome.toLowerCase().includes(informacao.toLowerCase()) || (informacao == "")) {
+                console.log(informacao != "")
                 if (verificar) lista_filtrada.push(i)
 
             }
@@ -55,6 +58,7 @@ export function FiltragemHome(props) {
         setFiltrarTexto(e.target.value)
         filtrar(e.target.value)
         cards = cardFiltrada.map(card => { return card.nome })
+        console.log(cards)
     }
 
     function handleClick(e) {
@@ -68,6 +72,7 @@ export function FiltragemHome(props) {
             dic[nome] = value
         }
         setFiltros(dic)
+        console.log(filtros)
         filtrar()
     }
 

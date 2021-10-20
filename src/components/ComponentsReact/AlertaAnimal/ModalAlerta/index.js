@@ -18,6 +18,7 @@ export function ModalAlertaMenu(props) {
     try {
       const res = await api.get(`/alertas/`);
       let animal = res.data.filter(alerta => alerta.concluido == false)
+      console.log(animal)
       setAnimais(animal)
     } catch (error) {
       console.log(error)
@@ -34,12 +35,13 @@ export function ModalAlertaMenu(props) {
         if (listNova.length<animal.length/3){
           listNova.push(animal.slice(listNova.length*3,animal.length))
         }
+    console.log(listNova)
     return listNova.slice(pag-1,pag)
   }
   return (
     <>
       <Button
-        classNameName="btn btn-danger"
+        id="botaoalerta"
         onClick={handleShow}
       >
         {" "}
@@ -95,7 +97,7 @@ export function ModalAlertaMenu(props) {
                   </li>
                 </ul>
               </nav>
-         {!token&&<div className="lembrete"><p>Faça login para cadastrar um animal perdido!</p></div>}
+         {!token&&<div className="lembrete"><p>Faça login para poder cadastrar um animal perdido!</p></div>}
         </Modal.Body>
       </Modal>
     </>
