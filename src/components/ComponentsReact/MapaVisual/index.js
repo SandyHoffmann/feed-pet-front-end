@@ -44,20 +44,22 @@ export function MapaVisual(props) {
             const alertas = await res.json();
             let lista = []
             for (let alerta of alertas) {
-              const { tipo_animal, nome, avatar } = alerta.animal;
-              let marker = {};
-              const { local } = alerta;
-              const [lat,lng] = local.split(" ");
-              marker = {
-                nome: nome,
-                avatar: avatar,
-                id_animal: alerta.id_animal,
-                lat: +lat,
-                lng: +lng,
-                time: alerta.dataDesaparecimento,
-                tipo: tipo_animal
-              };
-              lista.push(marker)
+                if (alerta.concluido == false) {
+                const { tipo_animal, nome, avatar } = alerta.animal;
+                let marker = {};
+                const { local } = alerta;
+                const [lat,lng] = local.split(" ");
+                marker = {
+                  nome: nome,
+                  avatar: avatar,
+                  id_animal: alerta.id_animal,
+                  lat: +lat,
+                  lng: +lng,
+                  time: alerta.dataDesaparecimento,
+                  tipo: tipo_animal
+                };
+                lista.push(marker)
+              }
             }
             setMarkers(lista)
         }
