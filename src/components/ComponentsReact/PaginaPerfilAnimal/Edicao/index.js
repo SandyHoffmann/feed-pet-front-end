@@ -117,18 +117,6 @@ export function EdicaoAnimal(props) {
         </div>
         <div class="conjuntoaEditar">
           <div>
-            <div class="small">
-              <label>ENDEREÇO</label>
-              <p>Visto em Indaial</p>
-            </div>
-            <div class="small">
-              <label>CASTRADO</label>
-              <p>Não</p>
-            </div>
-            <div class="small">
-              <label>PELO</label>
-              <p>Pelo curto</p>
-            </div>
             <div class="small sexoedicao">
               <label>SEXO</label>
               <div className="conjuntoAnimal">

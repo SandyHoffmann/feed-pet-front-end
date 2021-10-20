@@ -41,7 +41,7 @@ export function PaginaAnimal(props) {
       setUsuario(token.sub)
       const agenda = await api.get(`/agendas/${id}`);
       let dados = agenda.data[1].map(atividade => atividade.atividade_feita.split("/separar/"))
-      let lista = { "comida": 0, "dormir": 0 }
+      let lista = { "comida": 0, "dormir": 0, "agua":0, "passeou":0 }
       if (dados) {
         for (let d of dados) {
           for (let e of d) {
@@ -49,6 +49,10 @@ export function PaginaAnimal(props) {
               lista.comida += 1
             } if (e == "Dormiu aqui") {
               lista.dormir += 1
+            } if (e == "Coloquei Água") {
+              lista.agua += 1
+            } if (e == "Levei para Passear") {
+              lista.passeou += 1
             }
           }
 
@@ -229,7 +233,7 @@ export function PaginaAnimal(props) {
                   <h6 class="count h2" id="icones" data-to="500" data-speed="500">
                     <img className="iconeAnimal" src='https://i.imgur.com/IB1WmcV.png'></img>
                   </h6>
-                  <p class="m-0px font-w-600">Ganhou água 0x</p>
+                  <p class="m-0px font-w-600">Ganhou água {dados.agua}</p>
                 </div>
               </div>
               <div class="col-6 col-lg-3">
@@ -253,7 +257,7 @@ export function PaginaAnimal(props) {
                   <h6 class="count h2" id="icones" data-to="190" data-speed="190">
                     <img className="iconeAnimal" src='https://i.imgur.com/0DMwO9w.png'></img>
                   </h6>
-                  <p class="m-0px font-w-600">Passeou 0x</p>
+                  <p class="m-0px font-w-600">Passeou {dados.passeou}</p>
                 </div>
               </div>
             </div>

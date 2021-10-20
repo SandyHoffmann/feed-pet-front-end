@@ -14,6 +14,7 @@ export function PaginaPerfilAtualizado(props) {
   const [animais, setAnimal] = useState([])
   const [usuario, setUsuario] = useState([])
   const [posts, setPosts] = useState([])
+  const [lista, setLista] = useState([])
   const {id} = useParams();
   const editando = useRef(false)
 
@@ -30,6 +31,15 @@ export function PaginaPerfilAtualizado(props) {
         setPosts(postagens)
         setInformacoes(informacao)
         setAnimal(animais.data)
+        let lista = {"gato":0,"cachorro":0}
+        for (let animal of animais.data){
+            if (animal.tipo_animal == "Gato"){
+              lista.gato+=1
+            } else{
+              lista.cachorro+=1
+            }
+        }
+        setLista(lista)
       } catch (error) {
         console.log(error)
       }
@@ -106,7 +116,7 @@ export function PaginaPerfilAtualizado(props) {
                         >
                           <img className="iconePessoa" src='https://i.imgur.com/3bqxcS1.png'></img>
                         </h6>
-                        <p class="m-0px font-w-600">Tem 0 cães</p>
+                        <p class="m-0px font-w-600">Tem {lista.cachorro} cães</p>
                       </div>
                     </div>
                     <div>
@@ -119,7 +129,7 @@ export function PaginaPerfilAtualizado(props) {
                         >
                           <img className="iconePessoa" src='https://i.imgur.com/tldds0b.png'></img>
                         </h6>
-                        <p class="m-0px font-w-600">Tem 0 gatos</p>
+                        <p class="m-0px font-w-600">Tem {lista.gato} gatos</p>
                       </div>
                     </div>
                   </div>
