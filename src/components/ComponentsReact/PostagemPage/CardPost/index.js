@@ -26,9 +26,9 @@ export function PostagemCard(props) {
         swal("Postagem deletada com sucesso!", {
           icon: "success",
         }).then(async ()=>{
-          console.log(props.posts)
+
           let posts = props.posts.filter(post => post.id !== props.post?.id)
-          console.log(posts)
+
            props.setarPost(posts)
       });
       } else {
@@ -36,7 +36,7 @@ export function PostagemCard(props) {
       }
     });
   }
-  console.log(props.usuario_logado)
+
   return (
     <div className="profile-content">
       <div className="tab-content p-0">

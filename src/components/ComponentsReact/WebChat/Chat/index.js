@@ -28,7 +28,6 @@ export function Chat(props) {
         let lista = []
         try {
             const res = await api.get("/chats/");
-            console.log('chats = '+ chats)
             const chatsNovos = res.data[0]
             const ultimasMsg = res.data[1]
             for (let x = 0; x<chatsNovos.length; x++){
@@ -37,8 +36,6 @@ export function Chat(props) {
 
             let data
             lista = lista.sort(function (a, b) {
-                console.log(a.ultimaMsg.createdAt)
-                console.log(b.ultimaMsg.createdAt)
                 data = a.ultimaMsg.created_at
                     if (moment(a.ultimaMsg.createdAt) > moment(b.ultimaMsg.createdAt)) {
                         return -1;
@@ -56,16 +53,13 @@ export function Chat(props) {
             const chatsIds = res.data[0].map(chat => chat.id)
             socket.emit("add chats",chatsIds)
             socket.on("nova mensagem",mensagem => {
-                console.log("nova mensagem")
                 const msgData = mensagem
                 if (socket.auth.userId !== msgData.id_usuario){
-                    console.log("entrou aqui no nova mensagem")
                     setMsgs(msg => [...msg,msgData])
                     let elementoMsg = document.querySelectorAll('.mensagens__corpo')
                     elementoMsg[0]?.scroll(0,document.body.scrollHeight)
                 }
                 if(props.estado==="menu"){
-                    console.log("menu")
                     let alerta = document.querySelectorAll(".chatMenu")
                     if (alerta.length>0){
                         alerta[0].className = "chatMenu visivelMenu"
@@ -93,13 +87,10 @@ export function Chat(props) {
 
     useEffect(async () => {
         let mensagem = msg[msg.length-1]
-        console.log("entrou no use effect")
         if (mensagem){
             let chatFiltrado = chats.filter(chat => chat.id === mensagem.id_chat)
-            console.log(chats)
             if (chatFiltrado.length>0){
                 let chatObjeto = chatFiltrado[0]
-                console.log("chat encontrado: "+JSON.stringify(chatObjeto))
                 let chatCriado = Object.assign(chatObjeto, {ultimaMsg:{conteudo:mensagem.conteudo}})
                 let chatsAtualizados = [chatCriado,...chats.filter(chat => chat.id !== mensagem.id_chat)]
                 setChats(chatsAtualizados)

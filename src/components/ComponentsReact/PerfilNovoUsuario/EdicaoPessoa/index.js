@@ -4,7 +4,6 @@ import { api } from "../../../../service";
 import "./styles.css"
 export function EdicaoPessoa(props) {
   const { id } = useParams();
-  console.log(id)
 
   const [nome, setNome] = useState("")
   const [descricao, setDescricao] = useState("")
@@ -15,7 +14,7 @@ export function EdicaoPessoa(props) {
     try {
       e.preventDefault();
       const formData = new FormData(e.target);
-      console.log(formData)
+
       let p = document.querySelectorAll(".carregando")
       p[0].className = "carregando loader"
       const res = await api.put(`/usuarios/${id}`,

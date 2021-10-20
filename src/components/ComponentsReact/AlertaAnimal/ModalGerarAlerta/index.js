@@ -56,7 +56,6 @@ export function ModalGerarAlertaMenu(props) {
     } catch (error) {
         let erros = error.response.data
         console.log(erros)
-        // VerificarErros(erros)
     }
     
     }

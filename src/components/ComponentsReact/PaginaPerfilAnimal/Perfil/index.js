@@ -25,12 +25,10 @@ export function PaginaAnimal(props) {
   const [dono, setDono] = useState([])
   const editando = useRef(false)
   const { id } = useParams();
-  console.log(id)
   useEffect(async () => {
     try {
       const res = await api.get(`/animais/geral/${id}`);
       const informacao = res.data;
-      console.log(informacao)
       setInformacoes(informacao)
       setDono(informacao.usuario[0])
       if (informacao.status === "Desaparecido") {
