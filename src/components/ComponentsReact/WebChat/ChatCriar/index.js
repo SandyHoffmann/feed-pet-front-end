@@ -36,12 +36,9 @@ export function ChatCriar(props) {
     async function handleSubmit() {
         try {
             const nomeChat = pessoasDoChat.length<2 ? pessoasDoChat[0].nome : nome
-            console.log(nomeChat)
             let verificar = true
-            console.log(pessoasDoChat)
             if (!nome) {
                 if (pessoasDoChat.length<2){
-                    console.log(props.chats)
                     props.chats.filter(
                         chat => chat.usuario.length === 2 &&
                             chat.usuario.map(
@@ -52,7 +49,6 @@ export function ChatCriar(props) {
                 }
             }
             if (verificar) {
-                console.log(pessoasDoChat)
                 const usuarios = pessoasDoChat.map(pessoa => pessoa.id)
                 const send = await api.post("/chats/", {
                     "nome": nomeChat,

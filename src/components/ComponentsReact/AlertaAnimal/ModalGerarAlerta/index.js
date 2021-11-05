@@ -29,7 +29,6 @@ export function ModalGerarAlertaMenu(props) {
       const token = jwt.decode(localStorage.getItem("access-token"), process.env.REACT_APP_REFRESH_TOKEN_SECRET)
       const res = await api.get(`/usuarios/animais/${token.sub || 'undefined'}`);
       const animais = res.data.filter(animal => animal.status !== "Desaparecido");
-      console.log(animais)
       setAnimais(animais)
 
     } catch (error) {
@@ -45,7 +44,6 @@ export function ModalGerarAlertaMenu(props) {
           const res = await api.post(`/alertas/${id_animal}`, 
                               {descricao,dataDesaparecimento:data_desaparecimento,local,cidade}
                               );
-          console.log(res.data)
           setIdAnimal("")
           setDescricao("")
           setDataDesaparecimento(new Date())

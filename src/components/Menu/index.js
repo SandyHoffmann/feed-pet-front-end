@@ -16,7 +16,6 @@ export function Menu(props) {
   useEffect(async () => {
     let local = window.location.href
     let pag = local.split('http://localhost:3001/');
-    console.log(pag)
     setpagAtual(pag[1])
   }, [])
   return (

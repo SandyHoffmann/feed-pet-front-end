@@ -52,7 +52,6 @@ export function PaginaNoticias() {
 
 
     useEffect(() => {
-        console.log(currentCard)
         const cardsFormatados = cards.slice();
         cardsFormatados.splice(0, 0, cardsFormatados.splice(currentCard, 1)[0]);
         setCardsNoticias(cardsFormatados);

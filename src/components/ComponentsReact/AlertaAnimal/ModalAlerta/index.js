@@ -18,7 +18,6 @@ export function ModalAlertaMenu(props) {
     try {
       const res = await api.get(`/alertas/`);
       let animal = res.data.filter(alerta => alerta.concluido == false)
-      console.log(animal)
       setAnimais(animal)
     } catch (error) {
       console.log(error)
@@ -35,7 +34,6 @@ export function ModalAlertaMenu(props) {
         if (listNova.length<animal.length/3){
           listNova.push(animal.slice(listNova.length*3,animal.length))
         }
-    console.log(listNova)
     return listNova.slice(pag-1,pag)
   }
   return (

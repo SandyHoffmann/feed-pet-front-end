@@ -12,7 +12,6 @@ export function ChatBox(props) {
                 <div className="msgCards">
                 <div className="image" >
                     <img src={props.chat.usuario.length<=2 && props.chat.usuario.filter(usuario => usuario.id!==props.pessoa)[0].avatar||'https://i.imgur.com/QXsz9XL.png'}/>
-        {console.log(props.chat.usuario[0].avatar)}
                 </div>
                     <div className="flexContato">
                         <div className="flexContato__user">
