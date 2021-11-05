@@ -23,6 +23,7 @@ export function PostagemCard(props) {
     .then(async (willDelete) => {
       if (willDelete) {
         let deletar=await api.delete(`/postagens/${props.post?.id}`);
+        console.log(props.post?.id+" teste");
         swal("Postagem deletada com sucesso!", {
           icon: "success",
         }).then(async ()=>{
